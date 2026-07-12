@@ -2,25 +2,66 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #132d52;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-navy: #132d52;
+  --color-navy-900: #0c1f3b;
+  --color-navy-50: #f0f4f9;
+  --color-brand: #9dcc40;
+  --color-brand-600: #84b32e;
+  --color-brand-50: #f5faea;
+  --font-sans: var(--font-poppins);
+  --font-script: var(--font-caveat);
+  --font-logo: var(--font-pacaembu);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+.font-logo {
+  font-family: var(--font-logo), var(--font-sans), system-ui, sans-serif;
+}
+
+.font-script {
+  font-family: var(--font-script), cursive;
+}
+
+.icon-pattern {
+  background-image: url("/logos/Assured Logo - Icon White.png");
+  background-size: 48px 48px;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+.focus-ring-light:focus-visible {
+  outline: 2px solid var(--color-navy);
+  outline-offset: 2px;
 }
