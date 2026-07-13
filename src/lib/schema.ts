@@ -10,7 +10,7 @@ export function getLocalBusinessSchema() {
     url: site.url,
     telephone: site.phoneIntl,
     email: site.email,
-    image: `${site.url}/images/team.jpg`,
+    image: `${site.url}/images/hero.png`,
     logo: `${site.url}/logos/Assured Logo - Primary Inverted.png`,
     founder: {
       "@type": "Person",

@@ -47,11 +47,11 @@ export default function AboutPage() {
             <AnimateOnScroll>
               <div className="overflow-hidden rounded-[var(--radius-media)] shadow-[var(--shadow-lift)] ring-1 ring-navy/8">
                 <Image
-                  src="/images/team.jpg"
+                  src="/images/hero.png"
                   alt="Assured Cleaning Services team in Tauranga, Bay of Plenty"
                   width={700}
                   height={525}
-                  className="aspect-[4/3] w-full object-cover"
+                  className="aspect-[4/3] w-full object-cover object-[68%_18%]"
                 />
               </div>
             </AnimateOnScroll>
