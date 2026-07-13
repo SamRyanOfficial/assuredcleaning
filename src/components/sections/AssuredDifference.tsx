@@ -1,49 +1,59 @@
 import Link from "next/link";
 import { assuredDifference } from "@/content/difference";
 import { AnimateOnScroll } from "@/components/ui/AnimateOnScroll";
-import { BrandIcon } from "@/components/ui/BrandIcon";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { SectionTitle } from "@/components/ui/SectionTitle";
+import { cn } from "@/lib/utils";
 
-export function AssuredDifference() {
+export function AssuredDifference({
+  omitLinked = false,
+  className,
+}: {
+  omitLinked?: boolean;
+  className?: string;
+}) {
+  const items = omitLinked
+    ? assuredDifference.filter((item) => !("href" in item && item.href))
+    : assuredDifference;
+
   return (
-    <section className="bg-white py-20">
+    <section className={cn("section-pad bg-navy-50", className)}>
       <Container>
         <AnimateOnScroll>
-          <SectionHeading
-            kicker="Why businesses choose us"
-            title="The Assured Difference"
-            description="Six commitments that set our commercial cleaning apart."
-            className="mb-12"
-          />
+          <SectionTitle
+            subtitle={
+              omitLinked
+                ? "Five commitments behind every clean."
+                : "Six commitments behind every clean."
+            }
+          >
+            The <span className="text-brand-600">Assured</span> Difference
+          </SectionTitle>
         </AnimateOnScroll>
 
-        <div className="grid gap-8 md:grid-cols-2">
-          {assuredDifference.map((item, index) => (
-            <AnimateOnScroll key={item.title} delay={index * 60}>
-              <div className="flex gap-4">
-                <BrandIcon variant="green" className="mt-1 h-8 w-8" />
-                <div>
-                  <h3 className="text-lg font-semibold text-navy">
-                    {"href" in item && item.href ? (
-                      <Link
-                        href={item.href}
-                        className="transition-colors hover:text-brand-600 focus-ring rounded"
-                      >
-                        {item.title}
-                      </Link>
-                    ) : (
-                      item.title
-                    )}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            </AnimateOnScroll>
-          ))}
-        </div>
+        <AnimateOnScroll delay={60}>
+          <ul className="mt-10 grid gap-x-10 gap-y-2.5 sm:grid-cols-2 lg:gap-x-14">
+            {items.map((item) => (
+              <li key={item.title} className="flex gap-2.5 text-sm leading-snug text-slate-600">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" aria-hidden />
+                {"href" in item && item.href ? (
+                  <Link
+                    href={item.href}
+                    className="transition-colors hover:text-navy focus-ring-light rounded"
+                  >
+                    <span className="font-semibold text-navy">{item.title}</span>
+                    <span className="text-slate-500"> — {item.description}</span>
+                  </Link>
+                ) : (
+                  <span>
+                    <span className="font-semibold text-navy">{item.title}</span>
+                    <span className="text-slate-500"> — {item.description}</span>
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </AnimateOnScroll>
       </Container>
     </section>
   );

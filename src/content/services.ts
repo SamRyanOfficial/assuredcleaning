@@ -3,6 +3,8 @@ export const premisesTypes = [
     id: "offices",
     title: "Offices",
     description:
+      "Presentable workspaces for staff, clients and visitors — every day.",
+    detail:
       "Professional office cleaning that keeps your workspace presentable for staff, clients and visitors — every day.",
     icon: "building",
   },
@@ -10,6 +12,8 @@ export const premisesTypes = [
     id: "retail",
     title: "Retail Stores",
     description:
+      "Spotless floors, fixtures and customer areas that make a strong first impression.",
+    detail:
       "First impressions matter. We help retail businesses maintain spotless floors, fixtures and customer areas.",
     icon: "store",
   },
@@ -17,6 +21,8 @@ export const premisesTypes = [
     id: "hospitality",
     title: "Hospitality Venues",
     description:
+      "Hygiene and presentation standards that cafés and restaurants demand.",
+    detail:
       "From cafés to restaurants, we understand the hygiene and presentation standards hospitality demands.",
     icon: "utensils",
   },
@@ -24,13 +30,17 @@ export const premisesTypes = [
     id: "medical",
     title: "Medical Practices",
     description:
+      "Careful, consistent cleaning where hygiene is non-negotiable.",
+    detail:
       "Careful, consistent cleaning for medical and healthcare environments where hygiene is non-negotiable.",
     icon: "medical",
   },
   {
     id: "wellness",
-    title: "Health & Wellness Centres",
+    title: "Health & Wellness",
     description:
+      "Welcoming spaces that reflect the care your clients expect.",
+    detail:
       "Clean, welcoming spaces that reflect the care your clients expect from your wellness business.",
     icon: "wellness",
   },
@@ -38,13 +48,17 @@ export const premisesTypes = [
     id: "gyms",
     title: "Gyms",
     description:
+      "Thorough cleaning of high-traffic workout areas and changerooms.",
+    detail:
       "Thorough cleaning of workout areas, changerooms and high-traffic zones to keep members confident.",
     icon: "gym",
   },
   {
     id: "commercial",
-    title: "General Commercial Premises",
+    title: "General Commercial",
     description:
+      "Whatever your premises, we leave your business looking its absolute best.",
+    detail:
       "Whatever your premises, our goal is the same: leave your business looking its absolute best.",
     icon: "commercial",
   },
@@ -85,3 +99,22 @@ export const beforeAfterPairs = [
     alt: "Commercial stairwell cleaning in Te Puke — before and after",
   },
 ] as const;
+
+export const premisesBeforeAfterMap = {
+  offices: beforeAfterPairs[0],
+  retail: beforeAfterPairs[1],
+  hospitality: beforeAfterPairs[3],
+  medical: beforeAfterPairs[2],
+  wellness: {
+    title: "Health & wellness cleaning",
+    before: "/images/before-after/wellness-9192.jpg",
+    after: "/images/before-after/wellness-9208.jpg",
+    alt: "Health and wellness premises cleaning by Assured Cleaning Services",
+  },
+  gyms: {
+    title: "Gym cleaning",
+    before: "/images/before-after/gym-9262.jpg",
+    after: "/images/before-after/gym-9271.jpg",
+    alt: "Gym and sports facility cleaning by Assured Cleaning Services",
+  },
+} as const;

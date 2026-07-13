@@ -23,16 +23,15 @@ export function SectionHeading({
   return (
     <div
       className={cn(
-        align === "center" && "text-center",
-        "max-w-3xl",
-        align === "center" && "mx-auto",
+        "max-w-2xl",
+        align === "center" && "mx-auto text-center",
         className,
       )}
     >
       {kicker && (
         <p
           className={cn(
-            "mb-3 text-xs font-semibold uppercase tracking-[0.2em]",
+            "mb-4 text-[0.6875rem] font-semibold uppercase tracking-[0.22em]",
             light ? "text-brand" : "text-brand-600",
           )}
         >
@@ -41,7 +40,7 @@ export function SectionHeading({
       )}
       <h2
         className={cn(
-          "text-3xl font-bold tracking-tight md:text-4xl",
+          "text-balance text-3xl font-bold leading-[1.15] tracking-tight md:text-4xl lg:text-[2.75rem]",
           light ? "text-white" : "text-navy",
         )}
       >
@@ -50,8 +49,9 @@ export function SectionHeading({
       {description && (
         <p
           className={cn(
-            "mt-4 text-lg leading-relaxed",
-            light ? "text-white/80" : "text-slate-600",
+            "mt-5 text-pretty text-base leading-relaxed md:text-lg",
+            light ? "text-white/75" : "text-slate-600",
+            align === "center" ? "mx-auto max-w-xl" : "max-w-xl",
           )}
         >
           {description}

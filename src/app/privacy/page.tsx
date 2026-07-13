@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/Container";
+import { PageHero } from "@/components/ui/PageHero";
 import { site } from "@/content/site";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -12,18 +13,13 @@ export const metadata = createPageMetadata({
 export default function PrivacyPage() {
   return (
     <>
-      <section className="bg-navy-50 py-16">
-        <Container>
-          <h1 className="text-3xl font-bold text-navy md:text-4xl">
-            Privacy Policy
-          </h1>
-          <p className="mt-4 text-slate-600">
-            Last updated: July 2026
-          </p>
-        </Container>
-      </section>
+      <PageHero
+        kicker="Legal"
+        title="Privacy Policy"
+        description="Last updated: July 2026"
+      />
 
-      <section className="py-16">
+      <section className="section-pad">
         <Container>
           <div className="prose prose-slate max-w-3xl prose-headings:text-navy prose-a:text-navy">
             <p>

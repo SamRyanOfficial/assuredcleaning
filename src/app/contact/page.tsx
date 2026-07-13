@@ -1,7 +1,7 @@
 import { ContactForm } from "@/components/forms/ContactForm";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PageHero } from "@/components/ui/PageHero";
 import { site } from "@/content/site";
 import { createPageMetadata } from "@/lib/metadata";
 import { getBreadcrumbSchema } from "@/lib/schema";
@@ -26,53 +26,65 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
       />
 
-      <section className="bg-navy-50 py-16">
-        <Container>
-          <SectionHeading
-            kicker="Get in touch"
-            title="Contact us"
-            description="We'd love to hear from you. Reach out by phone, email or the form below."
-          />
-        </Container>
-      </section>
+      <PageHero
+        kicker="Get in touch"
+        title={
+          <>
+            <span className="text-brand-600">Contact</span> us
+          </>
+        }
+        description="Reach out by phone, email or the form below — we'd love to hear from you."
+      />
 
-      <section className="py-20">
+      <section id="contact-form" className="section-pad scroll-mt-28">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-2">
-            <div>
-              <h2 className="text-xl font-bold text-navy">Contact details</h2>
-              <ul className="mt-6 space-y-4 text-slate-600">
+          <div className="grid gap-10 lg:grid-cols-5 lg:gap-14">
+            <div className="lg:col-span-2">
+              <h2 className="text-lg font-bold tracking-tight text-navy">
+                Contact details
+              </h2>
+              <ul className="mt-6 space-y-5 text-slate-600">
                 <li>
-                  <span className="block text-sm font-medium text-navy">Phone</span>
+                  <span className="mb-1 block text-xs font-medium uppercase tracking-wider text-slate-400">
+                    Phone
+                  </span>
                   <a
                     href={`tel:${site.phoneIntl}`}
-                    className="text-lg font-semibold hover:text-brand-600 focus-ring rounded"
+                    className="text-xl font-semibold tracking-tight text-navy transition-colors hover:text-brand-600 focus-ring rounded"
                   >
                     {site.phone}
                   </a>
                 </li>
                 <li>
-                  <span className="block text-sm font-medium text-navy">Email</span>
+                  <span className="mb-1 block text-xs font-medium uppercase tracking-wider text-slate-400">
+                    Email
+                  </span>
                   <a
                     href={`mailto:${site.email}`}
-                    className="hover:text-brand-600 focus-ring rounded"
+                    className="transition-colors hover:text-brand-600 focus-ring rounded"
                   >
                     {site.email}
                   </a>
                 </li>
                 <li>
-                  <span className="block text-sm font-medium text-navy">Service areas</span>
+                  <span className="mb-1 block text-xs font-medium uppercase tracking-wider text-slate-400">
+                    Service areas
+                  </span>
                   {site.serviceAreas.join(" · ")}
                 </li>
                 <li>
-                  <span className="block text-sm font-medium text-navy">Hours</span>
+                  <span className="mb-1 block text-xs font-medium uppercase tracking-wider text-slate-400">
+                    Hours
+                  </span>
                   {site.hours}
                 </li>
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm md:p-8">
-              <h2 className="mb-6 text-xl font-bold text-navy">Send a message</h2>
+            <div className="rounded-[var(--radius-card)] border border-navy/6 bg-white p-6 md:p-8 lg:col-span-3">
+              <h2 className="mb-6 text-lg font-bold tracking-tight text-navy">
+                Send a message
+              </h2>
               <ContactForm />
             </div>
           </div>

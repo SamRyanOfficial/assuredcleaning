@@ -2,7 +2,8 @@ import { OverAndAboveReportMock } from "@/components/booking/OverAndAboveReportM
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { AnimateOnScroll } from "@/components/ui/AnimateOnScroll";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { FeatureCard } from "@/components/ui/FeatureCard";
+import { PageHero } from "@/components/ui/PageHero";
 import { createPageMetadata } from "@/lib/metadata";
 import { getBreadcrumbSchema } from "@/lib/schema";
 
@@ -44,45 +45,45 @@ export default function OverAndAbovePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
       />
 
-      <section className="bg-navy-50 py-16">
-        <Container>
-          <SectionHeading
-            kicker="Our signature offering"
-            title="Over & Above Reports"
-            description="Cleaning is the minimum expectation. We look for every opportunity to add value to your premises."
-          />
-        </Container>
-      </section>
+      <PageHero
+        kicker="The Assured difference"
+        title={
+          <>
+            <span className="text-brand-600">Over &amp; Above</span> Reports
+          </>
+        }
+        description="Cleaning is the minimum. We look for every opportunity to add value to your premises."
+      />
 
-      <section className="py-20">
+      <section className="py-12 md:py-16">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-3">
-            {philosophyPoints.map((point, index) => (
-              <AnimateOnScroll key={point.title} delay={index * 80}>
-                <h2 className="text-xl font-bold text-navy">{point.title}</h2>
-                <p className="mt-3 leading-relaxed text-slate-600">
-                  {point.description}
-                </p>
-              </AnimateOnScroll>
-            ))}
+          <div className="mb-8 text-center md:mb-10">
+            <h2 className="text-2xl font-bold tracking-tight text-navy md:text-3xl">
+              A real example
+            </h2>
+            <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-slate-500">
+              A stylised recreation of an actual Over &amp; Above Report from a
+              Papamoa premises.
+            </p>
           </div>
-        </Container>
-      </section>
-
-      <section className="bg-navy-50 py-20">
-        <Container>
-          <SectionHeading
-            kicker="A real example"
-            title="From a Papamoa premises"
-            description="This is a stylised recreation of an actual Over & Above Report — not marketing fluff."
-            className="mb-12"
-            align="center"
-          />
           <AnimateOnScroll>
-            <div className="mx-auto max-w-3xl">
+            <div className="mx-auto max-w-3xl overflow-hidden rounded-[var(--radius-media)] shadow-[var(--shadow-lift)] ring-1 ring-navy/8">
               <OverAndAboveReportMock />
             </div>
           </AnimateOnScroll>
+
+          <div className="mt-8 grid gap-4 md:mt-10 md:grid-cols-3 md:gap-5">
+            {philosophyPoints.map((point, index) => (
+              <AnimateOnScroll key={point.title} delay={index * 60}>
+                <FeatureCard
+                  title={point.title}
+                  description={point.description}
+                  index={index}
+                  badge="number"
+                />
+              </AnimateOnScroll>
+            ))}
+          </div>
         </Container>
       </section>
 

@@ -4,7 +4,7 @@ import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 import { site } from "@/content/site";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PageHero } from "@/components/ui/PageHero";
 
 interface CalEmbedProps {
   calLink?: string;
@@ -56,38 +56,35 @@ export function CalEmbed({ calLink }: CalEmbedProps) {
 export function BookPageContent() {
   return (
     <>
-      <section className="bg-navy-50 py-16">
-        <Container>
-          <SectionHeading
-            kicker="Get started"
-            title="Book a Free Site Visit"
-            description="Free, no-obligation site visit and tailored cleaning proposal for your commercial premises."
-          />
-        </Container>
-      </section>
+      <PageHero
+        kicker="Next step"
+        title={
+          <>
+            Book a <span className="text-brand-600">Free Site Visit</span>
+          </>
+        }
+        description="Free, no-obligation site visit and tailored cleaning proposal for your commercial premises."
+      />
 
-      <section className="py-16">
+      <section className="section-pad">
         <Container>
           <CalEmbed />
-          <div className="mt-12 rounded-2xl bg-navy-50 p-8 text-center">
-            <h2 className="text-lg font-semibold text-navy">Prefer to talk?</h2>
-            <p className="mt-2 text-slate-600">
-              Call{" "}
-              <a
-                href={`tel:${site.phoneIntl}`}
-                className="font-semibold text-navy hover:text-brand-600 focus-ring rounded"
-              >
-                {site.phone}
-              </a>{" "}
-              or email{" "}
-              <a
-                href={`mailto:${site.email}`}
-                className="font-semibold text-navy hover:text-brand-600 focus-ring rounded"
-              >
-                {site.email}
-              </a>
-            </p>
-          </div>
+          <p className="mt-10 text-center text-sm text-slate-500">
+            Prefer to talk? Call{" "}
+            <a
+              href={`tel:${site.phoneIntl}`}
+              className="font-semibold text-navy transition-colors hover:text-brand-600 focus-ring rounded"
+            >
+              {site.phone}
+            </a>{" "}
+            or email{" "}
+            <a
+              href={`mailto:${site.email}`}
+              className="font-semibold text-navy transition-colors hover:text-brand-600 focus-ring rounded"
+            >
+              {site.email}
+            </a>
+          </p>
         </Container>
       </section>
     </>

@@ -8,12 +8,6 @@ export const founderLetter = {
   title: "Managing Director",
 };
 
-export const mission =
-  "To deliver consistently exceptional commercial cleaning through genuine care, proactive service and an over-and-above approach.";
-
-export const vision =
-  "To become one of the most trusted commercial cleaning companies in the Bay of Plenty.";
-
 export const coreValues = [
   {
     title: "We Care",
@@ -47,8 +41,20 @@ export const coreValues = [
   },
 ] as const;
 
-export const introParagraphs = [
-  "Assured Cleaning Services is a commercial cleaning company based in Tauranga, proudly serving businesses across the Bay of Plenty.",
-  "We specialise in professional commercial cleaning for offices, retail, hospitality, medical practices, gyms and general commercial premises — wherever consistently high standards matter.",
-  "Our over-and-above approach means we don't just maintain your workplace. We proactively look for ways to improve your premises, communicate clearly and deliver the dependable service your business deserves.",
+export const introPillars = [
+  {
+    title: "Commercial specialists",
+    description:
+      "Offices, retail, hospitality, medical, gyms and more — wherever consistently high standards matter.",
+  },
+  {
+    title: "Genuine care",
+    description:
+      "We treat every premises as though it were our own, with pride in presentation and attention to detail.",
+  },
+  {
+    title: "Over and above",
+    description:
+      "We don't just maintain your workplace. We improve it — and keep you clearly informed along the way.",
+  },
 ] as const;

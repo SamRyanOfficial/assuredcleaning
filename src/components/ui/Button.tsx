@@ -5,7 +5,8 @@ import { cn } from "@/lib/utils";
 interface ButtonProps {
   href: string;
   children: ReactNode;
-  variant?: "primary" | "secondary" | "outline";
+  variant?: "primary" | "secondary" | "outline" | "ghost";
+  size?: "md" | "lg";
   className?: string;
   external?: boolean;
 }
@@ -14,11 +15,17 @@ export function Button({
   href,
   children,
   variant = "primary",
+  size = "md",
   className,
   external,
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
+    "group inline-flex items-center justify-center gap-2 rounded-full font-semibold tracking-tight transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]";
+
+  const sizes = {
+    md: "px-6 py-3 text-sm",
+    lg: "px-8 py-3.5 text-base",
+  };
 
   const variants = {
     primary:
@@ -26,14 +33,18 @@ export function Button({
     secondary:
       "bg-navy text-white hover:bg-navy-900 focus-visible:outline-navy",
     outline:
-      "border-2 border-navy text-navy hover:bg-navy hover:text-white focus-visible:outline-navy",
+      "border border-navy/20 bg-transparent text-navy hover:border-navy hover:bg-navy hover:text-white focus-visible:outline-navy",
+    ghost:
+      "bg-transparent text-navy hover:bg-navy-50 focus-visible:outline-navy",
   };
+
+  const classes = cn(base, sizes[size], variants[variant], className);
 
   if (external) {
     return (
       <a
         href={href}
-        className={cn(base, variants[variant], className)}
+        className={classes}
         target={
           href.startsWith("tel:") || href.startsWith("mailto:")
             ? undefined
@@ -47,7 +58,7 @@ export function Button({
   }
 
   return (
-    <Link href={href} className={cn(base, variants[variant], className)}>
+    <Link href={href} className={classes}>
       {children}
     </Link>
   );
