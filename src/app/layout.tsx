@@ -34,9 +34,13 @@ export const metadata: Metadata = {
   description:
     "Professional commercial cleaning in Tauranga, Mt Maunganui, Papamoa and Te Puke. Consistently high standards, genuine care and Over & Above Reports. Book a free site visit.",
   icons: {
-    icon: "/icon.png",
-    apple: "/apple-icon.png",
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
