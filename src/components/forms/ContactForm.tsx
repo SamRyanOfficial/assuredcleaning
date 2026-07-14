@@ -69,7 +69,7 @@ export function ContactForm() {
   }
 
   const inputClass =
-    "w-full rounded-xl border border-slate-200 px-4 py-3 text-navy transition-colors focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20";
+    "w-full rounded-xl border border-navy/10 bg-white px-4 py-3 text-navy shadow-[0_1px_2px_rgb(19_45_82/0.04)] transition-colors placeholder:text-slate-400 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/25";
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-5">

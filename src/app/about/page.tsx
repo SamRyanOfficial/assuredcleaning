@@ -47,11 +47,11 @@ export default function AboutPage() {
             <AnimateOnScroll>
               <div className="overflow-hidden rounded-[var(--radius-media)] shadow-[var(--shadow-lift)] ring-1 ring-navy/8">
                 <Image
-                  src="/images/hero.png"
-                  alt="Assured Cleaning Services team in Tauranga, Bay of Plenty"
+                  src="/images/holly-upscaled.png"
+                  alt="Holly Fisher, Founder of Assured Cleaning Services"
                   width={700}
-                  height={525}
-                  className="aspect-[4/3] w-full object-cover object-[68%_18%]"
+                  height={875}
+                  className="aspect-[4/5] w-full object-cover object-top"
                 />
               </div>
             </AnimateOnScroll>
@@ -99,7 +99,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <AssuredDifference className="!pt-8 md:!pt-10" />
+      <AssuredDifference omitLinked className="!pt-8 md:!pt-10" />
       <CtaBanner />
     </>
   );

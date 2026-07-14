@@ -24,7 +24,7 @@ export const premisesTypes = [
       "Hygiene and presentation standards that cafés and restaurants demand.",
     detail:
       "From cafés to restaurants, we understand the hygiene and presentation standards hospitality demands.",
-    icon: "utensils",
+    icon: "hospitality",
   },
   {
     id: "medical",
@@ -61,6 +61,37 @@ export const premisesTypes = [
     detail:
       "Whatever your premises, our goal is the same: leave your business looking its absolute best.",
     icon: "commercial",
+  },
+] as const;
+
+export const specialisedServices = [
+  {
+    id: "tenancy",
+    title: "End of Tenancy Cleans",
+    description:
+      "Inspection-ready cleans to help tenants, landlords and property managers prepare for handover.",
+    icon: "tenancy",
+  },
+  {
+    id: "builders",
+    title: "Builders Cleans",
+    description:
+      "From post-construction dust to final presentation, we prepare new spaces for handover.",
+    icon: "builders",
+  },
+  {
+    id: "window",
+    title: "Professional Window Cleaning",
+    description:
+      "Crystal-clear windows that enhance your property's first impression.",
+    icon: "window",
+  },
+  {
+    id: "deep",
+    title: "Deep Cleans",
+    description:
+      "Ideal for periodic resets, neglected areas or preparing premises for a fresh start.",
+    icon: "deep",
   },
 ] as const;
 

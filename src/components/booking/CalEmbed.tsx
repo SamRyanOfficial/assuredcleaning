@@ -2,7 +2,9 @@
 
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
+import { CtaBanner } from "@/components/sections/CtaBanner";
 import { site } from "@/content/site";
+import { AnimateOnScroll } from "@/components/ui/AnimateOnScroll";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/ui/PageHero";
 
@@ -47,7 +49,7 @@ export function CalEmbed({ calLink }: CalEmbedProps) {
       namespace="site-visit"
       calLink={link}
       config={{ layout: "month_view" }}
-      className="min-h-[600px] w-full overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm"
+      className="min-h-[600px] w-full overflow-hidden rounded-[var(--radius-card)] border border-navy/8 bg-white shadow-[var(--shadow-soft)]"
       style={{ width: "100%", minHeight: "600px", overflow: "auto" }}
     />
   );
@@ -66,9 +68,11 @@ export function BookPageContent() {
         description="Free, no-obligation site visit and tailored cleaning proposal for your commercial premises."
       />
 
-      <section className="section-pad">
+      <section className="section-pad bg-navy-50">
         <Container>
-          <CalEmbed />
+          <AnimateOnScroll>
+            <CalEmbed />
+          </AnimateOnScroll>
           <p className="mt-10 text-center text-sm text-slate-500">
             Prefer to talk? Call{" "}
             <a
@@ -87,6 +91,8 @@ export function BookPageContent() {
           </p>
         </Container>
       </section>
+
+      <CtaBanner />
     </>
   );
 }

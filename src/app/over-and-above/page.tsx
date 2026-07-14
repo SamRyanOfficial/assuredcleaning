@@ -2,7 +2,6 @@ import { OverAndAboveReportMock } from "@/components/booking/OverAndAboveReportM
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { AnimateOnScroll } from "@/components/ui/AnimateOnScroll";
 import { Container } from "@/components/ui/Container";
-import { FeatureCard } from "@/components/ui/FeatureCard";
 import { PageHero } from "@/components/ui/PageHero";
 import { createPageMetadata } from "@/lib/metadata";
 import { getBreadcrumbSchema } from "@/lib/schema";
@@ -14,23 +13,20 @@ export const metadata = createPageMetadata({
   path: "/over-and-above",
 });
 
-const philosophyPoints = [
+const reportBenefits = [
   {
-    title: "Cleaning is the minimum",
-    description:
-      "Every visit meets our consistently high standards — but we believe a true cleaning partner should add value beyond the routine scope.",
+    lead: "Care notes",
+    text: "on extra work or maintenance spotted",
   },
   {
-    title: "Proactive observations",
-    description:
-      "We flag maintenance concerns before they become larger issues, tackle areas needing extra attention and document our work clearly.",
+    lead: "Before & after",
+    text: "photos",
   },
   {
-    title: "Actionable recommendations",
-    description:
-      "Our reports give you practical information you can act on — improving presentation, hygiene and the long-term care of your premises.",
+    lead: "Outcome",
+    text: "— what was achieved",
   },
-];
+] as const;
 
 export default function OverAndAbovePage() {
   const breadcrumbs = getBreadcrumbSchema([
@@ -72,18 +68,40 @@ export default function OverAndAbovePage() {
             </div>
           </AnimateOnScroll>
 
-          <div className="mt-8 grid gap-4 md:mt-10 md:grid-cols-3 md:gap-5">
-            {philosophyPoints.map((point, index) => (
-              <AnimateOnScroll key={point.title} delay={index * 60}>
-                <FeatureCard
-                  title={point.title}
-                  description={point.description}
-                  index={index}
-                  badge="number"
-                />
-              </AnimateOnScroll>
-            ))}
-          </div>
+          <AnimateOnScroll>
+            <div className="mx-auto mt-12 max-w-3xl md:mt-16">
+              <h2 className="text-2xl font-bold tracking-tight text-navy md:text-3xl">
+                More than a clean —{" "}
+                <span className="text-brand-600">a useful record</span>
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-slate-600 md:text-base">
+                When we go{" "}
+                <span className="font-semibold text-navy">
+                  beyond the routine clean
+                </span>
+                , we leave you a simple report you can keep and share.
+              </p>
+              <ul className="mt-6 space-y-2.5">
+                {reportBenefits.map((benefit) => (
+                  <li
+                    key={benefit.lead}
+                    className="flex gap-3 text-sm leading-relaxed text-slate-600 md:text-base"
+                  >
+                    <span
+                      className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"
+                      aria-hidden
+                    />
+                    <span>
+                      <span className="font-semibold text-navy">
+                        {benefit.lead}
+                      </span>{" "}
+                      {benefit.text}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </AnimateOnScroll>
         </Container>
       </section>
 

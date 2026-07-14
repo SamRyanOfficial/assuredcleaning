@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/forms/ContactForm";
 import { CtaBanner } from "@/components/sections/CtaBanner";
+import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/ui/PageHero";
 import { site } from "@/content/site";
@@ -36,7 +37,7 @@ export default function ContactPage() {
         description="Reach out by phone, email or the form below — we'd love to hear from you."
       />
 
-      <section id="contact-form" className="section-pad scroll-mt-28">
+      <section id="contact-form" className="section-pad scroll-mt-28 bg-navy-50">
         <Container>
           <div className="grid gap-10 lg:grid-cols-5 lg:gap-14">
             <div className="lg:col-span-2">
@@ -81,12 +82,22 @@ export default function ContactPage() {
               </ul>
             </div>
 
-            <div className="rounded-[var(--radius-card)] border border-navy/6 bg-white p-6 md:p-8 lg:col-span-3">
-              <h2 className="mb-6 text-lg font-bold tracking-tight text-navy">
+            <Card
+              hover={false}
+              className="relative overflow-hidden lg:col-span-3 !border-navy/10 !bg-gradient-to-br !from-white !to-brand-50/40 !p-6 !shadow-[var(--shadow-lift)] md:!p-8"
+            >
+              <div
+                className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand via-brand-600 to-brand/30"
+                aria-hidden
+              />
+              <h2 className="mb-1 text-lg font-bold tracking-tight text-navy">
                 Send a message
               </h2>
+              <p className="mb-6 text-sm text-slate-500">
+                Fill in the form and we&apos;ll get back to you as soon as we can.
+              </p>
               <ContactForm />
-            </div>
+            </Card>
           </div>
         </Container>
       </section>

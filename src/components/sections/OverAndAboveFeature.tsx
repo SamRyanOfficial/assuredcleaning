@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { OverAndAboveReportMock } from "@/components/booking/OverAndAboveReportMock";
 import { AnimateOnScroll } from "@/components/ui/AnimateOnScroll";
 import { Button } from "@/components/ui/Button";
@@ -52,7 +53,7 @@ export function OverAndAboveFeature() {
                   key={benefit}
                   className="flex items-start gap-3 text-sm leading-relaxed text-white/75 md:text-[0.9375rem]"
                 >
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand" />
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
                   {benefit}
                 </li>
               ))}
@@ -64,9 +65,13 @@ export function OverAndAboveFeature() {
           </AnimateOnScroll>
 
           <AnimateOnScroll delay={100}>
-            <div className="overflow-hidden rounded-[var(--radius-media)] shadow-[var(--shadow-lift)] ring-1 ring-white/10">
+            <Link
+              href="/over-and-above"
+              className="group block overflow-hidden rounded-[var(--radius-media)] shadow-[var(--shadow-lift)] ring-1 ring-white/10 transition-all duration-300 hover:-translate-y-1 hover:ring-brand/40 hover:shadow-[0_12px_40px_rgb(0_0_0/0.28)] focus-ring-light"
+              aria-label="View Over and Above report details"
+            >
               <OverAndAboveReportMock compact />
-            </div>
+            </Link>
           </AnimateOnScroll>
         </div>
       </Container>

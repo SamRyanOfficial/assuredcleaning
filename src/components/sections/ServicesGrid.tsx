@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { premisesTypes } from "@/content/services";
+import { premisesTypes, specialisedServices } from "@/content/services";
 import { AnimateOnScroll } from "@/components/ui/AnimateOnScroll";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { PremisesIcon } from "@/components/ui/PremisesIcon";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { ServiceCard } from "@/components/ui/ServiceCard";
 
 const featuredPremises = premisesTypes.filter(
   (premises) => premises.id !== "commercial",
@@ -30,24 +30,39 @@ export function ServicesGrid() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
           {featuredPremises.map((premises, index) => (
             <AnimateOnScroll key={premises.id} delay={index * 40}>
-              <Link
+              <ServiceCard
                 href="/services"
-                className="group block h-full rounded-[var(--radius-card)] border border-navy/8 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-brand/35 hover:shadow-[var(--shadow-soft)] focus-ring-light md:p-6"
-              >
-                <div className="mb-4 flex items-center gap-3.5">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition-all duration-300 group-hover:scale-105 group-hover:bg-brand group-hover:text-navy">
-                    <PremisesIcon type={premises.icon} />
-                  </span>
-                  <h3 className="text-base font-semibold tracking-tight text-navy transition-colors group-hover:text-brand-600 md:text-lg">
-                    {premises.title}
-                  </h3>
-                </div>
-                <p className="text-sm leading-relaxed text-slate-500">
-                  {premises.description}
-                </p>
-              </Link>
+                icon={premises.icon}
+                title={premises.title}
+                description={premises.description}
+              />
             </AnimateOnScroll>
           ))}
+        </div>
+
+        <div
+          id="specialised-cleaning"
+          className="mt-16 border-t border-navy/8 pt-16 md:mt-20 md:pt-20"
+        >
+          <AnimateOnScroll>
+            <SectionTitle subtitle="Targeted cleans for handovers, construction and periodic resets.">
+              Specialised Cleaning{" "}
+              <span className="text-brand-600">Services</span>
+            </SectionTitle>
+          </AnimateOnScroll>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+            {specialisedServices.map((service, index) => (
+              <AnimateOnScroll key={service.id} delay={index * 40}>
+                <ServiceCard
+                  href="/services#specialised-cleaning"
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                />
+              </AnimateOnScroll>
+            ))}
+          </div>
         </div>
       </Container>
     </section>
