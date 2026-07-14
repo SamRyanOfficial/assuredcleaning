@@ -3,7 +3,7 @@ import { createPageMetadata } from "@/lib/metadata";
 import { getBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata = createPageMetadata({
-  title: "Book a Free Site Visit",
+  title: "Book a Free Site Assessment",
   description:
     "Book a free, no-obligation commercial cleaning site visit in Tauranga, Mt Maunganui, Papamoa or Te Puke. Receive a tailored cleaning proposal from Assured Cleaning Services.",
   path: "/book",

@@ -43,7 +43,7 @@ export function Footer() {
                     href="/book"
                     className="text-sm text-white/60 transition-colors hover:text-white focus-ring rounded"
                   >
-                    Book a Free Site Visit
+                    Book a Free Site Assessment
                   </Link>
                 </li>
                 <li>

@@ -26,4 +26,4 @@ export const navLinks = [
   { label: "Contact", href: "/contact" },
 ] as const;
 
-export const ctaLabel = "Book a Free Site Visit";
+export const ctaLabel = "Book a Free Site Assessment";

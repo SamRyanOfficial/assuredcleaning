@@ -9,6 +9,7 @@ interface ButtonProps {
   size?: "md" | "lg";
   className?: string;
   external?: boolean;
+  "aria-label"?: string;
 }
 
 export function Button({
@@ -18,6 +19,7 @@ export function Button({
   size = "md",
   className,
   external,
+  "aria-label": ariaLabel,
 }: ButtonProps) {
   const base =
     "group inline-flex items-center justify-center gap-2 rounded-full font-semibold tracking-tight transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]";
@@ -45,6 +47,7 @@ export function Button({
       <a
         href={href}
         className={classes}
+        aria-label={ariaLabel}
         target={
           href.startsWith("tel:") || href.startsWith("mailto:")
             ? undefined
@@ -58,7 +61,7 @@ export function Button({
   }
 
   return (
-    <Link href={href} className={classes}>
+    <Link href={href} className={classes} aria-label={ariaLabel}>
       {children}
     </Link>
   );

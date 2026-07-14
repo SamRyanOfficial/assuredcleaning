@@ -7,6 +7,12 @@ export interface Review {
 
 export const reviews: Review[] = [
   {
+    author: "Info Papa Mo's",
+    rating: 5,
+    source: "Google",
+    text: 'One of our guests just left a 5 star review mentioning that the venue was "spotlessly clean" - massive thanks for all of your hard work over the past few months.',
+  },
+  {
     author: "Pauline Demarco",
     rating: 5,
     source: "Google",

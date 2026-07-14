@@ -7,7 +7,7 @@ function GoogleIcon({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 24 24"
-      className={cn("h-5 w-5", className)}
+      className={cn("h-4 w-4", className)}
       aria-hidden
     >
       <path
@@ -40,24 +40,25 @@ export function GoogleReviewBadge({ className }: GoogleReviewBadgeProps) {
       href={site.googleReviewsUrl}
       target="_blank"
       rel="noopener noreferrer"
+      aria-label={`${aggregateRating.ratingValue.toFixed(1)} star rating on Google — read reviews`}
       className={cn(
-        "group inline-flex shrink-0 items-center gap-3 rounded-xl border border-white/12 bg-white/[0.06] px-4 py-3 transition-colors hover:border-white/20 hover:bg-white/10 focus-ring",
+        "group inline-flex shrink-0 items-center gap-2.5 rounded-full px-1 py-1 transition-colors hover:text-white focus-ring",
         className,
       )}
     >
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white shadow-sm">
-        <GoogleIcon />
+      <GoogleIcon className="opacity-80 transition-opacity group-hover:opacity-100" />
+      <span className="flex items-center gap-2">
+        <StarRating className="text-[#FBBC05]/85" size={9} />
+        <span className="text-sm font-medium tabular-nums text-white/90">
+          {aggregateRating.ratingValue.toFixed(1)}
+        </span>
       </span>
-      <span className="flex flex-col gap-0.5">
-        <span className="flex items-center gap-2">
-          <StarRating className="text-[#FBBC05]" size={12} />
-          <span className="text-sm font-bold tabular-nums text-white">
-            {aggregateRating.ratingValue.toFixed(1)}
-          </span>
-        </span>
-        <span className="text-xs font-medium text-white/55 transition-colors group-hover:text-white/75">
-          Google Reviews
-        </span>
+      <span
+        className="hidden h-3 w-px bg-white/15 sm:block"
+        aria-hidden
+      />
+      <span className="text-xs font-medium tracking-wide text-white/45 transition-colors group-hover:text-white/70">
+        Google Reviews
       </span>
     </a>
   );
