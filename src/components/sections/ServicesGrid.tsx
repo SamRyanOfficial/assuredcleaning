@@ -17,7 +17,7 @@ export function ServicesGrid() {
         <AnimateOnScroll>
           <div className="mb-10 flex flex-col gap-6 md:mb-12 md:flex-row md:items-end md:justify-between">
             <SectionTitle
-              subtitle="Offices, retail, hospitality and more — tailored to your premises."
+              subtitle="Businesses, organisations and workplaces of all kinds — tailored to your premises."
             >
               Premises we <span className="text-brand-600">clean</span>
             </SectionTitle>

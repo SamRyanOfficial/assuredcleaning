@@ -1,32 +1,33 @@
 export const assuredDifference = [
   {
-    title: "Consistently High Standards",
+    title: "Consistently High Cleaning Standards",
     description:
-      "Proven systems and attention to detail — so your premises meet the standard you expect, every visit.",
+      "Maintaining exceptional cleaning quality through proven systems, attention to detail, and consistent service delivery.",
   },
   {
     title: "Detailed Quality Inspections",
     description:
-      "Regular inspections ensure accountability and that every clean meets our high standards.",
+      "Regular inspections ensure every clean meets our high standards and provides accountability for every job.",
   },
   {
     title: "Fully Vetted & Trained Staff",
     description:
-      "Carefully selected, thoroughly trained professionals you can trust on your premises.",
+      "Our team is carefully selected, thoroughly trained, and committed to delivering professional, reliable service.",
   },
   {
-    title: "Over & Above Reports",
+    title: "Over & Above Improvement Reports",
     description:
-      "We identify opportunities to improve your premises — and provide clear recommendations.",
+      "We don't just clean—we identify opportunities to improve your premises and provide recommendations where needed.",
     href: "/over-and-above",
   },
   {
     title: "Clear Communication",
     description:
-      "Prompt, transparent updates so you're always informed and confident in our service.",
+      "Prompt, transparent communication so you're always informed and confident in our service.",
   },
   {
     title: "Fully Insured",
-    description: "Complete insurance coverage for your peace of mind.",
+    description:
+      "Complete insurance coverage gives you confidence and peace of mind while we work on your premises.",
   },
 ] as const;

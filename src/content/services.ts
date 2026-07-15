@@ -1,7 +1,7 @@
 export const premisesTypes = [
   {
     id: "offices",
-    title: "Offices",
+    title: "Offices & Organisations",
     description:
       "Presentable workspaces for staff, clients and visitors — every day.",
     detail:
@@ -132,15 +132,37 @@ export const beforeAfterPairs = [
 ] as const;
 
 export const premisesBeforeAfterMap = {
-  offices: beforeAfterPairs[0],
-  retail: beforeAfterPairs[1],
-  hospitality: beforeAfterPairs[3],
-  medical: beforeAfterPairs[2],
-  wellness: {
-    title: "Health & wellness cleaning",
+  offices: {
+    title: "Office cleaning",
+    before: "/images/before-after/floor-before.jpg",
+    after: "/images/before-after/floor-after.jpg",
+    alt: "Office and organisation premises cleaning by Assured Cleaning Services",
+  },
+  retail: {
+    title: "Retail cleaning",
+    before: "/images/before-after/retail-9183.png",
+    after: "/images/before-after/retail-9179.png",
+    alt: "Retail store cleaning by Assured Cleaning Services",
+  },
+  hospitality: {
+    title: "Hospitality cleaning",
     before: "/images/before-after/wellness-9192.jpg",
     after: "/images/before-after/wellness-9208.jpg",
+    alt: "Hospitality venue cleaning by Assured Cleaning Services",
+  },
+  medical: {
+    title: "Medical practice cleaning",
+    before: "/images/before-after/medical-9107.png",
+    after: "/images/before-after/medical-9094.png",
+    alt: "Medical practice cleaning by Assured Cleaning Services",
+  },
+  wellness: {
+    title: "Health & wellness cleaning",
+    before: "/images/before-after/wellness-office.png",
+    after: "/images/before-after/wellness-9082.png",
     alt: "Health and wellness premises cleaning by Assured Cleaning Services",
+    beforeObjectPosition: "center 20%",
+    afterZoom: 1.2,
   },
   gyms: {
     title: "Gym cleaning",

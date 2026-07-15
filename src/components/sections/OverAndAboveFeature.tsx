@@ -5,7 +5,7 @@ import { AnimateOnScroll } from "@/components/ui/AnimateOnScroll";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { overAndAboveReport } from "@/content/over-and-above";
+import { overAndAboveShowcase } from "@/content/over-and-above";
 
 const reportBenefits = [
   "Care & maintenance notes beyond the routine clean",
@@ -27,22 +27,30 @@ export function OverAndAboveFeature() {
             </SectionTitle>
 
             <div className="mt-8 grid grid-cols-2 gap-3">
-              <div className="overflow-hidden rounded-lg ring-1 ring-white/10">
+              <div className="relative overflow-hidden rounded-lg ring-1 ring-white/10">
+                <span className="absolute left-2 top-2 z-10 rounded bg-navy px-2 py-0.5 text-xs font-semibold text-white">
+                  Before
+                </span>
                 <Image
-                  src={overAndAboveReport.beforeImage}
-                  alt="Before cleaning — scuffed wall in commercial premises"
+                  src={overAndAboveShowcase.beforeImage}
+                  alt="Before — commercial bathroom floor before Assured Cleaning"
                   width={320}
                   height={240}
                   className="aspect-[4/3] w-full object-cover"
+                  style={{ objectPosition: overAndAboveShowcase.objectPosition }}
                 />
               </div>
-              <div className="overflow-hidden rounded-lg ring-1 ring-white/10">
+              <div className="relative overflow-hidden rounded-lg ring-1 ring-white/10">
+                <span className="absolute left-2 top-2 z-10 rounded bg-brand px-2 py-0.5 text-xs font-semibold text-navy">
+                  After
+                </span>
                 <Image
-                  src={overAndAboveReport.afterImage}
-                  alt="After cleaning — wall restored"
+                  src={overAndAboveShowcase.afterImage}
+                  alt="After — bathroom floor restored by Assured Cleaning"
                   width={320}
                   height={240}
                   className="aspect-[4/3] w-full object-cover"
+                  style={{ objectPosition: overAndAboveShowcase.objectPosition }}
                 />
               </div>
             </div>

@@ -7,7 +7,7 @@ function GoogleIcon({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 24 24"
-      className={cn("h-4 w-4", className)}
+      className={cn("h-3.5 w-3.5", className)}
       aria-hidden
     >
       <path
@@ -32,9 +32,39 @@ function GoogleIcon({ className }: { className?: string }) {
 
 interface GoogleReviewBadgeProps {
   className?: string;
+  variant?: "inline" | "panel";
 }
 
-export function GoogleReviewBadge({ className }: GoogleReviewBadgeProps) {
+export function GoogleReviewBadge({
+  className,
+  variant = "inline",
+}: GoogleReviewBadgeProps) {
+  if (variant === "panel") {
+    return (
+      <a
+        href={site.googleReviewsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${aggregateRating.ratingValue.toFixed(1)} star rating on Google — read reviews`}
+        className={cn(
+          "group inline-flex items-center gap-2.5 transition-colors hover:text-white focus-ring rounded-md",
+          className,
+        )}
+      >
+        <GoogleIcon className="h-5 w-5 shrink-0 opacity-90 transition-opacity group-hover:opacity-100" />
+        <span className="flex items-center gap-2">
+          <StarRating className="text-[#FBBC05]/85" size={12} />
+          <span className="text-sm font-semibold tabular-nums text-white/90">
+            {aggregateRating.ratingValue.toFixed(1)}
+          </span>
+          <span className="text-xs text-white/45 transition-colors group-hover:text-white/65">
+            on Google
+          </span>
+        </span>
+      </a>
+    );
+  }
+
   return (
     <a
       href={site.googleReviewsUrl}

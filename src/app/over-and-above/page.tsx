@@ -1,4 +1,4 @@
-import { OverAndAboveReportMock } from "@/components/booking/OverAndAboveReportMock";
+import { OverAndAboveReportExample } from "@/components/booking/OverAndAboveReportExample";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { AnimateOnScroll } from "@/components/ui/AnimateOnScroll";
 import { Container } from "@/components/ui/Container";
@@ -51,20 +51,19 @@ export default function OverAndAbovePage() {
         description="Cleaning is the minimum. We look for every opportunity to add value to your premises."
       />
 
-      <section className="py-12 md:py-16">
+      <section className="section-pad bg-navy-50">
         <Container>
           <div className="mb-8 text-center md:mb-10">
             <h2 className="text-2xl font-bold tracking-tight text-navy md:text-3xl">
               A real example
             </h2>
             <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-slate-500">
-              A stylised recreation of an actual Over &amp; Above Report from a
-              Papamoa premises.
+              An example Over &amp; Above Report from a Papamoa premises.
             </p>
           </div>
           <AnimateOnScroll>
-            <div className="mx-auto max-w-3xl overflow-hidden rounded-[var(--radius-media)] shadow-[var(--shadow-lift)] ring-1 ring-navy/8">
-              <OverAndAboveReportMock />
+            <div className="mx-auto max-w-2xl md:max-w-3xl">
+              <OverAndAboveReportExample />
             </div>
           </AnimateOnScroll>
 

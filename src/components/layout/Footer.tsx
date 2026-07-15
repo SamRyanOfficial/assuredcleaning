@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { navLinks, site } from "@/content/site";
+import { ctaLabel, navLinks, site } from "@/content/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -43,7 +43,7 @@ export function Footer() {
                     href="/book"
                     className="text-sm text-white/60 transition-colors hover:text-white focus-ring rounded"
                   >
-                    Book a Free Site Assessment
+                    {ctaLabel}
                   </Link>
                 </li>
                 <li>

@@ -5,6 +5,12 @@ export const overAndAboveReport = {
     "Wall between the dining and kitchen had significant scuff marks from high traffic - Your Cleaning Partner has removed. Maintenance Observation: Sani Pod in upstairs bathroom appears to be malfunctioning and may need to be serviced.",
   outcome:
     "This area received additional attention outside the routine cleaning scope to restore and improve its presentation.",
-  beforeImage: "/images/before-after/wall-before.jpg",
-  afterImage: "/images/before-after/wall-after.jpg",
+  beforeImage: "/images/before-after/over-and-above-before.png",
+  afterImage: "/images/before-after/over-and-above-after.png",
+} as const;
+
+export const overAndAboveShowcase = {
+  beforeImage: "/images/before-after/over-and-above-floor-before.png",
+  afterImage: "/images/before-after/over-and-above-floor-after.png",
+  objectPosition: "center 30%",
 } as const;

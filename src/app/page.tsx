@@ -10,7 +10,7 @@ export default function HomePage() {
     <>
       <Hero />
       <ServicesGrid />
-      <AssuredDifference omitLinked />
+      <AssuredDifference />
       <OverAndAboveFeature />
       <TeamSection />
       <CtaBanner />

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { IconPattern } from "@/components/ui/BrandIcon";
 import { Container } from "@/components/ui/Container";
 import { GoogleReviewBadge } from "@/components/ui/GoogleReviewBadge";
+import { ctaLabel, site } from "@/content/site";
 
 const trustIndicators = [
   "Family Owned",
@@ -15,7 +16,7 @@ function TrustCheckIcon() {
   return (
     <svg
       viewBox="0 0 16 16"
-      className="h-3.5 w-3.5 shrink-0 text-brand"
+      className="h-2.5 w-2.5 shrink-0 text-brand"
       aria-hidden
     >
       <path
@@ -41,39 +42,24 @@ export function Hero() {
               Commercial Cleaning
               <br />
               <span className="text-[0.9em] font-bold text-brand/85">
-                Across Tauranga
+                Across Tauranga &amp; the Bay of Plenty
               </span>
             </h1>
-            <div className="mt-9 max-w-[35rem] space-y-5 text-base leading-[1.75] text-white/80 md:text-lg md:leading-[1.8]">
-              <p>
-                Professional commercial cleaning for offices, retail stores,
-                hospitality venues and industrial premises throughout Tauranga
-                and the wider Bay of Plenty.
-              </p>
-              <p>
-                Experienced commercial cleaners delivering reliable, fully
-                insured cleaning tailored around your business.
-              </p>
-            </div>
+            <p className="mt-9 max-w-[35rem] text-base leading-[1.75] text-white/80 md:text-lg md:leading-[1.8]">
+              Professional commercial cleaning for offices, retail stores,
+              hospitality venues, wellness centres and organisations throughout
+              Tauranga and the wider Bay of Plenty.
+            </p>
+            <p className="mt-5 font-script text-xl text-brand md:text-2xl">
+              {site.tagline}
+            </p>
 
-            <ul className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 sm:flex-nowrap">
-              {trustIndicators.map((label) => (
-                <li
-                  key={label}
-                  className="inline-flex shrink-0 items-center gap-1.5 text-xs font-medium text-white/75 md:text-sm"
-                >
-                  <TrustCheckIcon />
-                  {label}
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-14 flex flex-col gap-3 pb-2 sm:flex-row sm:items-center">
+            <div className="mt-10 flex flex-col gap-3 pb-2 sm:flex-row sm:items-center">
               <Button
                 href="/book"
-                aria-label="Book a free site assessment for commercial cleaning in Tauranga"
+                aria-label="Book a free site visit for commercial cleaning in Tauranga"
               >
-                Book a Free Site Assessment
+                {ctaLabel}
               </Button>
               <Button
                 href="/contact#contact-form"
@@ -102,10 +88,26 @@ export function Hero() {
       </Container>
 
       <div className="relative border-t border-white/10 bg-navy-900/70">
-        <Container className="flex flex-col gap-5 py-5 md:flex-row md:items-center md:gap-8 md:py-6">
-          <GoogleReviewBadge />
+        <Container className="flex flex-col gap-4 py-4 md:flex-row md:items-center md:gap-6 md:py-5">
+          <div className="inline-flex w-fit max-w-full flex-col items-stretch gap-1.5 rounded-lg border border-white/8 bg-white/[0.03] px-3 py-2">
+            <GoogleReviewBadge
+              variant="panel"
+              className="w-full justify-center"
+            />
+            <ul className="flex w-full items-center justify-between gap-x-1.5 px-0.5">
+              {trustIndicators.map((label) => (
+                <li
+                  key={label}
+                  className="inline-flex shrink-0 items-center gap-1 text-[10px] font-medium whitespace-nowrap text-white/65"
+                >
+                  <TrustCheckIcon />
+                  {label}
+                </li>
+              ))}
+            </ul>
+          </div>
           <div
-            className="hidden h-6 w-px shrink-0 bg-white/10 md:block"
+            className="hidden w-px shrink-0 self-stretch bg-white/10 md:block"
             aria-hidden
           />
           <ReviewCarousel className="min-w-0 flex-1" />

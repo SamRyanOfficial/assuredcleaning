@@ -1,7 +1,7 @@
 export const founderLetter = {
   paragraphs: [
     "I started Assured Cleaning Services with a simple belief: commercial cleaning should do more than maintain a workplace — it should help businesses put their best foot forward.",
-    "Every premises we care for is treated as though it were our own. That genuine pride in presentation, consistency and attention to detail is what sets the Assured difference apart.",
+    "Today, the Assured team brings that belief to life through consistent, meticulous attention to detail and our Over & Above Approach, caring for every business we support as though it were our own.",
     "We would love the opportunity to support your business and show you what proactive, professional commercial cleaning looks like.",
   ],
   signOff: "Holly Fisher",

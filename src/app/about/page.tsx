@@ -99,7 +99,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <AssuredDifference omitLinked className="!pt-8 md:!pt-10" />
+      <AssuredDifference className="!pt-8 md:!pt-10" />
       <CtaBanner />
     </>
   );

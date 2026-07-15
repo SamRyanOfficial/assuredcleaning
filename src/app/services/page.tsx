@@ -78,6 +78,14 @@ export default function ServicesPage() {
                             width={400}
                             height={300}
                             className="aspect-[4/3] w-full object-cover"
+                            style={
+                              "beforeObjectPosition" in beforeAfter
+                                ? {
+                                    objectPosition:
+                                      beforeAfter.beforeObjectPosition,
+                                  }
+                                : undefined
+                            }
                           />
                         </div>
                         <div className="overflow-hidden rounded-[var(--radius-card)] shadow-[var(--shadow-soft)] ring-1 ring-navy/8">
@@ -87,6 +95,11 @@ export default function ServicesPage() {
                             width={400}
                             height={300}
                             className="aspect-[4/3] w-full object-cover"
+                            style={
+                              "afterZoom" in beforeAfter
+                                ? { transform: `scale(${beforeAfter.afterZoom})` }
+                                : undefined
+                            }
                           />
                         </div>
                       </div>
