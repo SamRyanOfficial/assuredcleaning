@@ -27,31 +27,45 @@ export function OverAndAboveFeature() {
             </SectionTitle>
 
             <div className="mt-8 grid grid-cols-2 gap-3">
-              <div className="relative overflow-hidden rounded-lg ring-1 ring-white/10">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg ring-1 ring-white/10">
                 <span className="absolute left-2 top-2 z-10 rounded bg-navy px-2 py-0.5 text-xs font-semibold text-white">
                   Before
                 </span>
-                <Image
-                  src={overAndAboveShowcase.beforeImage}
-                  alt="Before — commercial bathroom floor before Assured Cleaning"
-                  width={320}
-                  height={240}
-                  className="aspect-[4/3] w-full object-cover"
-                  style={{ objectPosition: overAndAboveShowcase.objectPosition }}
-                />
+                <div
+                  className="absolute inset-0 origin-center"
+                  style={{ transform: `scale(${overAndAboveShowcase.zoom})` }}
+                >
+                  <Image
+                    src={overAndAboveShowcase.beforeImage}
+                    alt="Before — commercial bathroom floor before Assured Cleaning"
+                    fill
+                    sizes="(max-width: 1024px) 45vw, 320px"
+                    className="object-cover"
+                    style={{
+                      objectPosition: overAndAboveShowcase.beforeObjectPosition,
+                    }}
+                  />
+                </div>
               </div>
-              <div className="relative overflow-hidden rounded-lg ring-1 ring-white/10">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg ring-1 ring-white/10">
                 <span className="absolute left-2 top-2 z-10 rounded bg-brand px-2 py-0.5 text-xs font-semibold text-navy">
                   After
                 </span>
-                <Image
-                  src={overAndAboveShowcase.afterImage}
-                  alt="After — bathroom floor restored by Assured Cleaning"
-                  width={320}
-                  height={240}
-                  className="aspect-[4/3] w-full object-cover"
-                  style={{ objectPosition: overAndAboveShowcase.objectPosition }}
-                />
+                <div
+                  className="absolute inset-0 origin-center"
+                  style={{ transform: `scale(${overAndAboveShowcase.zoom})` }}
+                >
+                  <Image
+                    src={overAndAboveShowcase.afterImage}
+                    alt="After — bathroom floor restored by Assured Cleaning"
+                    fill
+                    sizes="(max-width: 1024px) 45vw, 320px"
+                    className="object-cover"
+                    style={{
+                      objectPosition: overAndAboveShowcase.afterObjectPosition,
+                    }}
+                  />
+                </div>
               </div>
             </div>
 

@@ -12,5 +12,7 @@ export const overAndAboveReport = {
 export const overAndAboveShowcase = {
   beforeImage: "/images/before-after/over-and-above-floor-before.png",
   afterImage: "/images/before-after/over-and-above-floor-after.png",
-  objectPosition: "center 30%",
+  beforeObjectPosition: "center 30%",
+  afterObjectPosition: "42% 30%",
+  zoom: 1.1,
 } as const;

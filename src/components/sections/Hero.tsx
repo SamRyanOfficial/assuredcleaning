@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ReviewCarousel } from "@/components/sections/ReviewCarousel";
+import { HeroReviewCarousel } from "@/components/sections/HeroReviewCarousel";
 import { Button } from "@/components/ui/Button";
 import { IconPattern } from "@/components/ui/BrandIcon";
 import { Container } from "@/components/ui/Container";
@@ -110,7 +110,7 @@ export function Hero() {
             className="hidden w-px shrink-0 self-stretch bg-white/10 md:block"
             aria-hidden
           />
-          <ReviewCarousel className="min-w-0 flex-1" />
+          <HeroReviewCarousel className="min-w-0 flex-1" />
         </Container>
       </div>
     </section>

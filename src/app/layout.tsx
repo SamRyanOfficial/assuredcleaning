@@ -57,6 +57,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-NZ"
+      data-scroll-behavior="smooth"
       className={`${poppins.variable} ${caveat.variable} h-full antialiased`}
       style={{ ["--font-pacaembu" as string]: "var(--font-poppins)" }}
     >

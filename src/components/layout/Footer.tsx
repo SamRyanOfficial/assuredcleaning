@@ -97,7 +97,8 @@ export function Footer() {
         </div>
 
         <div className="mt-14 border-t border-white/8 pt-8 text-xs text-white/35 md:text-sm">
-          © {year} {site.name}. All rights reserved.
+          © <span suppressHydrationWarning>{year}</span> {site.name}. All rights
+          reserved.
         </div>
       </div>
     </footer>
