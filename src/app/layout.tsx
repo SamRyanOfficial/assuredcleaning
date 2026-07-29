@@ -3,6 +3,7 @@ import { Caveat, Poppins } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { site } from "@/content/site";
+import { defaultOpenGraph, defaultTwitter } from "@/lib/metadata";
 import {
   getLocalBusinessSchema,
   getReviewSchemas,
@@ -33,6 +34,11 @@ export const metadata: Metadata = {
   },
   description:
     "Professional commercial cleaning in Tauranga, Mt Maunganui, Papamoa and Te Puke. Consistently high standards, genuine care and Over & Above Reports. Book a free site visit.",
+  openGraph: {
+    ...defaultOpenGraph,
+    url: site.url,
+  },
+  twitter: defaultTwitter,
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },

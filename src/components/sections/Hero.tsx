@@ -1,31 +1,9 @@
 import Image from "next/image";
-import { HeroReviewCarousel } from "@/components/sections/HeroReviewCarousel";
+import { HeroTrustBar } from "@/components/sections/HeroTrustBar";
 import { Button } from "@/components/ui/Button";
 import { IconPattern } from "@/components/ui/BrandIcon";
 import { Container } from "@/components/ui/Container";
-import { GoogleReviewBadge } from "@/components/ui/GoogleReviewBadge";
 import { ctaLabel, site } from "@/content/site";
-
-const trustIndicators = [
-  "Family Owned",
-  "Fully Insured",
-  "5-Star Rated",
-] as const;
-
-function TrustCheckIcon() {
-  return (
-    <svg
-      viewBox="0 0 16 16"
-      className="h-2.5 w-2.5 shrink-0 text-brand"
-      aria-hidden
-    >
-      <path
-        fill="currentColor"
-        d="M6.2 11.2 3.4 8.4l-.9.9 3.7 3.7 7.8-7.8-.9-.9-6.9 6.9z"
-      />
-    </svg>
-  );
-}
 
 export function Hero() {
   return (
@@ -87,32 +65,7 @@ export function Hero() {
         </div>
       </Container>
 
-      <div className="relative border-t border-white/10 bg-navy-900/70">
-        <Container className="flex flex-col gap-4 py-4 md:flex-row md:items-center md:gap-6 md:py-5">
-          <div className="inline-flex w-fit max-w-full flex-col items-stretch gap-1.5 rounded-lg border border-white/8 bg-white/[0.03] px-3 py-2">
-            <GoogleReviewBadge
-              variant="panel"
-              className="w-full justify-center"
-            />
-            <ul className="flex w-full items-center justify-between gap-x-1.5 px-0.5">
-              {trustIndicators.map((label) => (
-                <li
-                  key={label}
-                  className="inline-flex shrink-0 items-center gap-1 text-[10px] font-medium whitespace-nowrap text-white/65"
-                >
-                  <TrustCheckIcon />
-                  {label}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div
-            className="hidden w-px shrink-0 self-stretch bg-white/10 md:block"
-            aria-hidden
-          />
-          <HeroReviewCarousel className="min-w-0 flex-1" />
-        </Container>
-      </div>
+      <HeroTrustBar />
     </section>
   );
 }

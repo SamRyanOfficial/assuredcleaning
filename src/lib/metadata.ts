@@ -1,6 +1,29 @@
 import type { Metadata } from "next";
 import { site } from "@/content/site";
 
+const ogImage = {
+  url: "/og/default.png",
+  width: 1200,
+  height: 630,
+  alt: `${site.name} — commercial cleaning team in Tauranga`,
+} as const;
+
+export const defaultOpenGraph: Metadata["openGraph"] = {
+  title: site.shareTitle,
+  description: site.shareDescription,
+  siteName: site.name,
+  locale: "en_NZ",
+  type: "website",
+  images: [ogImage],
+};
+
+export const defaultTwitter: Metadata["twitter"] = {
+  card: "summary_large_image",
+  title: site.shareTitle,
+  description: site.shareDescription,
+  images: [ogImage.url],
+};
+
 interface PageMetadataOptions {
   title: string;
   description: string;
@@ -21,26 +44,15 @@ export function createPageMetadata({
       canonical: url,
     },
     openGraph: {
+      ...defaultOpenGraph,
       title,
       description,
       url,
-      siteName: site.name,
-      locale: "en_NZ",
-      type: "website",
-      images: [
-        {
-          url: `${site.url}/og/default.png`,
-          width: 1200,
-          height: 630,
-          alt: `${site.name} — ${site.tagline}`,
-        },
-      ],
     },
     twitter: {
-      card: "summary_large_image",
+      ...defaultTwitter,
       title,
       description,
-      images: [`${site.url}/og/default.png`],
     },
   };
 }
