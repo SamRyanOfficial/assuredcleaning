@@ -10,7 +10,7 @@ export function getLocalBusinessSchema() {
     url: site.url,
     telephone: site.phoneIntl,
     email: site.email,
-    image: `${site.url}/images/hero.png`,
+    image: `${site.url}/images/assured-cleaning-hero.png`,
     logo: `${site.url}/logos/Assured Logo - Primary Inverted.png`,
     founder: {
       "@type": "Person",
@@ -34,6 +34,22 @@ export function getLocalBusinessSchema() {
       worstRating: 1,
     },
     sameAs: [site.facebook, site.googleReviewsUrl],
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        opens: "07:00",
+        closes: "19:00",
+      },
+    ],
   };
 }
 

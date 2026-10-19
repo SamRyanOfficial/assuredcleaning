@@ -13,10 +13,10 @@ export function TeamSection() {
           <AnimateOnScroll>
             <div className="relative aspect-[5/4] overflow-hidden rounded-[var(--radius-media)] shadow-[var(--shadow-soft)] ring-1 ring-navy/6">
               <Image
-                src="/images/IMG_9244.jpg"
+                src="/images/assured-cleaning-2.png"
                 alt="Assured Cleaning Services team — Holly Fisher and staff in Tauranga"
                 fill
-                className="object-cover object-[50%_32%]"
+                className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>

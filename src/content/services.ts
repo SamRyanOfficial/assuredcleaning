@@ -5,7 +5,7 @@ export const premisesTypes = [
     description:
       "Presentable workspaces for staff, clients and visitors — every day.",
     detail:
-      "Professional office cleaning that keeps your workspace presentable for staff, clients and visitors — every day.",
+      "Professional office cleaners who keep your workspace presentable for staff, clients and visitors — every day.",
     icon: "building",
   },
   {
@@ -23,7 +23,7 @@ export const premisesTypes = [
     description:
       "Hygiene and presentation standards that cafés and restaurants demand.",
     detail:
-      "From cafés to restaurants, we understand the hygiene and presentation standards hospitality demands.",
+      "Hospitality cleaners who understand the hygiene and presentation standards cafés and restaurants demand.",
     icon: "hospitality",
   },
   {
@@ -67,7 +67,7 @@ export const premisesTypes = [
 export const specialisedServices = [
   {
     id: "tenancy",
-    title: "End of Tenancy Cleans",
+    title: "End of Tenancy Clean",
     description:
       "Inspection-ready cleans to help tenants, landlords and property managers prepare for handover.",
     icon: "tenancy",

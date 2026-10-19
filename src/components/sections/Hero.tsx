@@ -24,9 +24,10 @@ export function Hero() {
               </span>
             </h1>
             <p className="mt-9 max-w-[35rem] text-base leading-[1.75] text-white/80 md:text-lg md:leading-[1.8]">
-              Professional commercial cleaning for offices, retail stores,
-              hospitality venues, wellness centres and organisations throughout
-              Tauranga and the wider Bay of Plenty.
+              Trusted office cleaners and commercial cleaners for workplaces
+              across Tauranga and the Bay of Plenty — plus hospitality cleaners,
+              End of Tenancy Clean handovers and reliable cleaners who care about
+              every visit.
             </p>
             <p className="mt-5 font-script text-xl text-brand md:text-2xl">
               {site.tagline}
@@ -40,7 +41,7 @@ export function Hero() {
                 {ctaLabel}
               </Button>
               <Button
-                href="/contact#contact-form"
+                href="#contact-form"
                 variant="outline"
                 className="border-white text-white hover:bg-white hover:text-navy"
                 aria-label="Contact Assured Cleaning about commercial cleaning in Tauranga"
@@ -53,11 +54,11 @@ export function Hero() {
           <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">
             <div className="relative aspect-[5/4] overflow-hidden rounded-[var(--radius-media)] shadow-[var(--shadow-lift)] ring-1 ring-white/12 sm:aspect-[4/3] lg:aspect-[5/4]">
               <Image
-                src="/images/hero.png"
+                src="/images/assured-cleaning-hero.png"
                 alt="The Assured Cleaning commercial cleaning team serving Tauranga and the Bay of Plenty."
                 fill
                 priority
-                className="object-cover object-[68%_18%]"
+                className="object-cover object-center"
                 sizes="(max-width: 1024px) 90vw, 540px"
               />
             </div>

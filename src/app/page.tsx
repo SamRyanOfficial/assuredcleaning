@@ -3,6 +3,7 @@ import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { AssuredDifference } from "@/components/sections/AssuredDifference";
 import { OverAndAboveFeature } from "@/components/sections/OverAndAboveFeature";
 import { TeamSection } from "@/components/sections/TeamSection";
+import { ContactSection } from "@/components/sections/ContactSection";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 
 export default function HomePage() {
@@ -13,6 +14,7 @@ export default function HomePage() {
       <AssuredDifference />
       <OverAndAboveFeature />
       <TeamSection />
+      <ContactSection showIntro alternateSurface />
       <CtaBanner />
     </>
   );

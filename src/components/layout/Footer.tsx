@@ -91,6 +91,7 @@ export function Footer() {
                 <li className="pt-1 leading-relaxed">
                   {site.serviceAreas.join(" · ")}
                 </li>
+                <li className="leading-relaxed">{site.hours}</li>
               </ul>
             </div>
           </div>
