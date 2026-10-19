@@ -9,6 +9,7 @@ interface ContentCardProps {
   title: string;
   description: string;
   className?: string;
+  layout?: "inline" | "stacked";
 }
 
 export function ContentCard({
@@ -16,7 +17,10 @@ export function ContentCard({
   title,
   description,
   className,
+  layout = "inline",
 }: ContentCardProps) {
+  const stacked = layout === "stacked";
+
   return (
     <div
       className={cn(
@@ -24,16 +28,35 @@ export function ContentCard({
         className,
       )}
     >
-      <div className="mb-3 flex items-center gap-3.5">
-        <PremisesIcon
-          type={icon}
-          className="!h-10 !w-10 shrink-0 transition-transform duration-300 group-hover:scale-110 md:!h-11 md:!w-11"
-        />
-        <h3 className="text-base font-semibold tracking-tight text-navy transition-colors group-hover:text-brand-600 md:text-lg">
-          {title}
-        </h3>
-      </div>
-      <p className="text-sm leading-relaxed text-slate-500">{description}</p>
+      {stacked ? (
+        <>
+          <PremisesIcon
+            type={icon}
+            className="!h-11 !w-11 transition-transform duration-300 group-hover:scale-110 md:!h-12 md:!w-12"
+          />
+          <h3 className="mt-4 text-base font-semibold tracking-tight text-navy transition-colors group-hover:text-brand-600 md:text-lg">
+            {title}
+          </h3>
+        </>
+      ) : (
+        <div className="mb-3 flex items-center gap-3.5">
+          <PremisesIcon
+            type={icon}
+            className="!h-10 !w-10 shrink-0 transition-transform duration-300 group-hover:scale-110 md:!h-11 md:!w-11"
+          />
+          <h3 className="text-base font-semibold tracking-tight text-navy transition-colors group-hover:text-brand-600 md:text-lg">
+            {title}
+          </h3>
+        </div>
+      )}
+      <p
+        className={cn(
+          "text-sm leading-relaxed text-slate-500",
+          stacked ? "mt-2.5" : undefined,
+        )}
+      >
+        {description}
+      </p>
     </div>
   );
 }

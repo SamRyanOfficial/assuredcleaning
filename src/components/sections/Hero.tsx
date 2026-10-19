@@ -24,10 +24,10 @@ export function Hero() {
               </span>
             </h1>
             <p className="mt-9 max-w-[35rem] text-base leading-[1.75] text-white/80 md:text-lg md:leading-[1.8]">
-              Trusted office cleaners and commercial cleaners for workplaces
-              across Tauranga and the Bay of Plenty — plus hospitality cleaners,
-              End of Tenancy Clean handovers and reliable cleaners who care about
-              every visit.
+              Trusted office cleaners, commercial cleaners and hospitality cleaners
+              keeping Tauranga and the Bay of Plenty spotless. We&apos;re also
+              specialists in deep cleans, pre- and post-market cleans, and End of
+              Tenancy Cleans that make every handover easy and stress-free.
             </p>
             <p className="mt-5 font-script text-xl text-brand md:text-2xl">
               {site.tagline}

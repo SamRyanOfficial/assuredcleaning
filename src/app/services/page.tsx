@@ -17,7 +17,7 @@ import { getBreadcrumbSchema } from "@/lib/schema";
 export const metadata = createPageMetadata({
   title: "Services",
   description:
-    "Commercial cleaning for offices, retail, hospitality, medical practices, gyms and more in Tauranga, Mt Maunganui, Papamoa and Te Puke. Quote-based — book a free site visit.",
+    "Commercial cleaning plus End of Tenancy Cleans, pre- and post-market cleans, deep cleans and more in Tauranga, Mt Maunganui, Papamoa and Te Puke. Book a free site visit.",
   path: "/services",
 });
 

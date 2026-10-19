@@ -67,10 +67,24 @@ export const premisesTypes = [
 export const specialisedServices = [
   {
     id: "tenancy",
-    title: "End of Tenancy Clean",
+    title: "End of Tenancy Cleans",
     description:
       "Inspection-ready cleans to help tenants, landlords and property managers prepare for handover.",
     icon: "tenancy",
+  },
+  {
+    id: "market",
+    title: "Pre- & Post-Market Cleans",
+    description:
+      "Presentation-ready cleans before listing or after open homes — so buyers see your property at its best.",
+    icon: "market",
+  },
+  {
+    id: "deep",
+    title: "Deep Cleans",
+    description:
+      "Ideal for periodic resets, neglected areas or preparing premises for a fresh start.",
+    icon: "deep",
   },
   {
     id: "builders",
@@ -85,13 +99,6 @@ export const specialisedServices = [
     description:
       "Crystal-clear windows that enhance your property's first impression.",
     icon: "window",
-  },
-  {
-    id: "deep",
-    title: "Deep Cleans",
-    description:
-      "Ideal for periodic resets, neglected areas or preparing premises for a fresh start.",
-    icon: "deep",
   },
 ] as const;
 

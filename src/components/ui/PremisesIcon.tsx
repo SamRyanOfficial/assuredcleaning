@@ -10,6 +10,7 @@ export type PremisesIconType =
   | "gym"
   | "commercial"
   | "tenancy"
+  | "market"
   | "builders"
   | "window"
   | "deep"
@@ -36,6 +37,7 @@ const palettes: Record<PremisesIconType, IconPalette> = {
   gym: { primary: "#132d52", secondary: "#64748b", accent: "#9dcc40" },
   commercial: { primary: "#132d52", secondary: "#64748b", accent: "#9dcc40" },
   tenancy: { primary: "#0369a1", secondary: "#7dd3fc", accent: "#9dcc40" },
+  market: { primary: "#132d52", secondary: "#9dcc40", accent: "#fbbf24" },
   builders: { primary: "#a16207", secondary: "#facc15", accent: "#132d52" },
   window: { primary: "#0891b2", secondary: "#a5f3fc", accent: "#9dcc40" },
   deep: { primary: "#9dcc40", secondary: "#132d52", accent: "#fbbf24" },
@@ -183,6 +185,18 @@ export function PremisesIcon({ type, className }: PremisesIconProps) {
             strokeLinecap="round"
             d="M26.8 7.8l1.2-1.2M27.8 9.8l1.2-1.2"
           />
+        </IconShell>
+      );
+    case "market":
+      return (
+        <IconShell className={className}>
+          <path fill={secondary} d="M4 26h18V16L13 11 4 16v10z" />
+          <path fill={primary} d="M6.5 26V18.5L13 15l6.5 3.5V26H6.5z" />
+          <rect fill={primary} x="10" y="20.5" width="6" height="5.5" rx="0.6" />
+          <rect fill={accent} x="21" y="9" width="6.5" height="4.5" rx="0.8" />
+          <path fill={primary} d="M21.2 8.5h6.6l0.9 1.2h-8.4l0.9-1.2z" />
+          <rect fill={primary} x="24.2" y="22" width="1.6" height="4" rx="0.4" />
+          <circle fill={secondary} cx="25" cy="21.2" r="1.2" />
         </IconShell>
       );
     case "builders":

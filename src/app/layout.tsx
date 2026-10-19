@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: "%s | Assured Cleaning Services — Commercial Cleaning Tauranga",
   },
   description:
-    "Office cleaners, commercial cleaners and hospitality cleaners in Tauranga, Mt Maunganui, Papamoa and Te Puke — plus End of Tenancy Clean specialists. Open daily 7am–7pm. Book a free site visit.",
+    "Office cleaners, commercial cleaners and hospitality cleaners in Tauranga, Mt Maunganui, Papamoa and Te Puke — deep cleans, pre- and post-market cleans, and End of Tenancy Cleans. Open daily 7am–7pm. Book a free site visit.",
   keywords: [...site.seoKeywords],
   openGraph: {
     ...defaultOpenGraph,

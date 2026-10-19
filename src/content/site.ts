@@ -18,14 +18,14 @@ export const site = {
   hours: "Daily, 7:00am – 7:00pm",
   seoKeywords: [
     "Office Cleaners",
-    "End of Tenancy Clean",
+    "End of Tenancy Cleans",
     "Commercial Cleaners",
     "Hospitality Cleaners",
     "Cleaners",
   ] as const,
   shareTitle: "Commercial Cleaning for Businesses That Expect More",
   shareDescription:
-    "Office cleaners, commercial cleaners and hospitality cleaners in Tauranga and the Bay of Plenty — End of Tenancy Clean, consistently high standards and Over & Above Reports.",
+    "Office cleaners, commercial cleaners and hospitality cleaners in Tauranga and the Bay of Plenty — End of Tenancy Cleans, pre- and post-market cleans, and Over & Above Reports.",
 } as const;
 
 export const navLinks = [
